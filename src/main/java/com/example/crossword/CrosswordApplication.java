@@ -1,13 +1,13 @@
-package com.example.crossword_backend;
+package com.example.crossword;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CrosswordBackendApplication {
+public class CrosswordApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CrosswordBackendApplication.class, args);
+		SpringApplication.run(CrosswordApplication.class, args);
 	}
 
 }

@@ -17,7 +17,7 @@ public class Crossword {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "crossword_id")
-    private Long Id;
+    private Long id;
 
     @Column(name = "name", nullable = false, length = 255)
     private String name;

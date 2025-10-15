@@ -3,6 +3,8 @@ package com.example.crossword.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.EnumMap;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -29,5 +31,17 @@ public class CrosswordCell {
 //    @JoinColumn(name = "word_id", nullable = false)
 //    private CrosswordWord crosswordWord;
 
-    @
+    @Column(name = "row_num", nullable = false)
+    private Integer rowNum;
+
+    @Column(name = "column_num", nullable = false)
+    private Integer columnNum;
+
+    @Column(name = "letter", length = 8)
+    private String letter;
+
+    @Column(name = "is_blocked", nullable = false, columnDefinition = "TINYINT(1) DEFAULT 0")
+    private Boolean isBlocked = false;
+
+
 }
