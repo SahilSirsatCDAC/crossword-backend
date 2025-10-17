@@ -1,5 +1,6 @@
 package com.example.crossword.service;
 
+import com.example.crossword.dto.AIResponseDto;
 import com.example.crossword.dto.CellDto;
 import com.example.crossword.dto.CrosswordDto;
 import com.example.crossword.dto.WordDto;
@@ -9,6 +10,7 @@ import com.example.crossword.model.CrosswordWord;
 import com.example.crossword.repository.CrosswordCellRepository;
 import com.example.crossword.repository.CrosswordRepository;
 import com.example.crossword.repository.CrosswordWordRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,19 +19,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class CrosswordService {
 
     private final CrosswordRepository crosswordRepo;
     private final CrosswordCellRepository cellRepo;
     private final CrosswordWordRepository wordRepo;
-
-    public CrosswordService(CrosswordRepository crosswordRepo,
-                            CrosswordCellRepository cellRepo,
-                            CrosswordWordRepository wordRepo) {
-        this.crosswordRepo = crosswordRepo;
-        this.cellRepo = cellRepo;
-        this.wordRepo = wordRepo;
-    }
 
     @Transactional(readOnly = true)
     public CrosswordDto getCrossword(Long id) {
@@ -59,6 +54,12 @@ public class CrosswordService {
                 cells,
                 words
         );
+    }
+    public AIResponseDto generateCrosswordHybridMethod() throws Exception {
+        String startWord = "विज्ञान";
+
+
+        return new AIResponseDto(null);
     }
 
     private CellDto mapCell(CrosswordCell c) {

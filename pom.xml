@@ -72,7 +72,11 @@
 			<version>1.18.34</version> <!-- latest stable as of 2025 -->
 			<scope>provided</scope>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
